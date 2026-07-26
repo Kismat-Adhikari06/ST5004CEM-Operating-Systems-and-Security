@@ -1,67 +1,62 @@
 # ST5004CEM - Operating Systems and Security
 
-**Module:** ST5004CEM Operating Systems and Security  
-**Assessment:** Individual Coursework  
-**Word Count:** 2000 words (documentation)  
-**Language:** Python  
-**Platforms:** Windows and Ubuntu  
-
-This repository contains four tasks demonstrating key operating systems and security concepts.
+Individual coursework for ST5004CEM. Built in Python, runs on Windows and Ubuntu.
 
 ---
 
-## Task 1: Multi-threading
+## Task 1: Threading (`task1_threading/`)
 
-**Location:** `task1_threading/`
+- `threading_demo.py` — Creates 3+ threads, shows them running at the same time
+- `race_condition_demo.py` — Shared counter without locks, shows data going wrong
+- `lock_fix_demo.py` — Same counter with a lock, shows it works correctly
+- `round_robin_scheduler.py` — Simulates a CPU scheduler giving each process a time slice
+- `deadlock_demo.py` — Shows deadlock happening, then fixes it with lock ordering
 
-**Description:**  
-Multi-threaded application demonstrating thread creation (minimum 3 threads), synchronization mechanisms (locks/semaphores), a round-robin scheduler simulation, and race condition/deadlock prevention demonstrations.
-
-**How to Run:**  
-*(To be filled in)*
-
----
-
-## Task 2: Memory Management
-
-**Location:** `task2_memory/`
-
-**Description:**  
-Memory management simulator implementing a paging system with configurable page size, at least 2 page replacement algorithms (FIFO and LRU), page fault tracking, and hit/miss ratio calculation.
-
-**How to Run:**  
-*(To be filled in)*
+Run any file: `python task1_threading/<filename>.py`
 
 ---
 
-## Task 3: File System
+## Task 2: Memory Management (`task2_memory/`)
 
-**Location:** `task3_filesystem/`
+- `paging_model.py` — Basic paging with frames, no replacement yet
+- `fifo_replacement.py` — FIFO page replacement (evicts oldest page)
+- `lru_replacement.py` — LRU page replacement (evicts least recently used page)
+- `compare_algorithms.py` — Runs FIFO vs LRU side by side with different configs
 
-**Description:**  
-Secure file management system with file create/read/write/delete operations, user authentication, a file permission system (owner/group/others: read/write/execute), encryption/decryption for sensitive files, and audit logging.
-
-**How to Run:**  
-*(To be filled in)*
-
----
-
-## Task 4: Networking
-
-**Location:** `task4_network/`
-
-**Description:**  
-Client-server application using sockets with a custom protocol for data exchange, handling multiple concurrent clients, basic authentication/data validation, and proper error handling.
-
-**How to Run:**  
-*(To be filled in)*
+Run any file: `python task2_memory/<filename>.py`
 
 ---
 
-## Platform Compatibility
+## Task 3: File System (`task3_filesystem/`)
 
-All tasks are designed to run on both **Windows** and **Ubuntu** (Linux). No platform-specific dependencies are used.
+- `file_operations.py` — Create, read, write, delete files in a vault folder
+- `auth_system.py` — User registration and login with password hashing
+- `permission_system.py` — Unix-style rwx permissions (owner/group/others)
+- `encryption_system.py` — Encrypt/decrypt files using Fernet (needs `pip install cryptography`)
+- `audit_log.py` — Logs every action (login, read, write, denied access, etc.)
+
+Run any file: `python task3_filesystem/<filename>.py`
+
+---
+
+## Task 4: Networking (`task4_network/`)
+
+- `server.py` / `client.py` — Basic client-server, one message
+- `server_v2.py` / `client_v2.py` — JSON protocol with commands (ECHO, UPPERCASE, REVERSE)
+- `server_v3.py` / `client_v3.py` — Multiple clients at the same time using threads
+- `server_v4.py` / `client_v4.py` — Adds login/authentication
+- `server_v5.py` — Final version with error handling, timeouts, graceful shutdown
+- `testing_documentation.md` — How to run everything and test results
+
+Run server first, then client(s) in separate terminals:
+```
+python task4_network/server_v5.py
+python task4_network/client_v4.py alice password123
+```
+
+---
 
 ## Requirements
 
-*(To be filled in with Python version and any external dependencies)*
+- Python 3
+- `cryptography` library (Task 3 encryption only): `pip install cryptography`
