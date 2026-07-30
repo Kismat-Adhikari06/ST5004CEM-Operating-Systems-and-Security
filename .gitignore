@@ -1,0 +1,4 @@
+bin/
+output_logs/
+vault/
+audit_log.txt
