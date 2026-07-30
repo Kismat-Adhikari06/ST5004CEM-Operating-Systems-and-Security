@@ -1,3 +1,5 @@
 bin/
 output_logs/
 audit_log.txt
+vault/*.enc
+vault/*.dec
