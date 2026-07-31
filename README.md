@@ -1,6 +1,6 @@
 # ST5004CEM Operating Systems and Security — Coursework
 
-Python coursework converted to C (C11). Covers multi-threading, memory management, secure file systems, and network programming.
+C (C11) coursework covering multi-threading, memory management, secure file systems, and network programming.
 
 ## Quick Start (Linux/WSL)
 
@@ -60,7 +60,7 @@ make sanitize      # run with AddressSanitizer
 ├── common/              # shared utilities
 ├── task1_threading/     # 6 source files
 ├── task2_memory/        # 5 source + 1 header
-├── task3_filesystem/    # 10 source + header pairs
+├── task3_filesystem/    # 11 C/H files
 ├── task4_network/       # 3 source + 1 header
 ├── tests/               # 4 shell test scripts
 ├── vault/               # seed data files
